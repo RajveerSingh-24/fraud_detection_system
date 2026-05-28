@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/fraud_detection.db
+
+frontend/node_modules/
+frontend/dist/
+
+.DS_Store
