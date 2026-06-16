@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 
 
 class TransactionRequest(BaseModel):
+    user_id: int = Field(gt=0)
     amount: float = Field(gt=0)
     transaction_time: str
     location: str
@@ -18,6 +19,7 @@ class ModelScores(BaseModel):
 
 class TransactionDecision(BaseModel):
     anomaly_score: float
+    ensemble_score: float
     risk_score: float
     classification: Literal["SAFE", "REVIEW", "BLOCKED"]
     explanation: str
@@ -27,6 +29,7 @@ class TransactionDecision(BaseModel):
 
 class TransactionResponse(TransactionDecision):
     id: int
+    user_id: int
     amount: float
     transaction_time: str
     location: str

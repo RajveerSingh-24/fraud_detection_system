@@ -14,6 +14,7 @@ async function request(path, options = {}) {
 
 export const api = {
   getDashboard: () => request("/analytics/dashboard"),
+  getEvaluation: () => request("/analytics/evaluation"),
   simulatePayment: (payload) =>
     request("/transactions/simulate", {
       method: "POST",
@@ -21,4 +22,5 @@ export const api = {
     }),
   getHistory: () => request("/transactions/history?limit=100"),
   faceVerify: (transactionId) => request(`/transactions/${transactionId}/face-verify`, { method: "POST" }),
+  deleteTransaction: (transactionId) => request(`/transactions/${transactionId}`, { method: "DELETE" }),
 };

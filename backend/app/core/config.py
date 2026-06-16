@@ -8,8 +8,9 @@ class Settings(BaseModel):
 
     isolation_forest_contamination: float = 0.08
     one_class_nu: float = 0.1
-    dbscan_eps: float = 0.95
-    dbscan_min_samples: int = 8
+    dbscan_eps: float = 0.72
+    dbscan_min_samples: int = 14
+    synthetic_dataset_size: int = 50000
 
 
 settings = Settings()
